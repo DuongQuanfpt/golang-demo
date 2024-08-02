@@ -1,0 +1,21 @@
+git config --global 
+			 system
+			 local
+git config --global user.name			 
+					user.email
+git config --global core.editor "code --wait"
+
+git init : create git repo
+
+
+git checkout -b [name_of_your_new_branch] : create new bracnh
+
+git remote set-url origin [Https repo]: set remote repo
+git add.
+git commit -m " message"
+git push
+
+
+---------------------------------------------------------
+cd .. : back to previous directory
+cd <filename> : go to file directory
