@@ -3,5 +3,6 @@ package main
 func main() {
 	// dataTypeTutorial()
 	// functionTutorial()
-	arrayTutorial()
+	// arrayTutorial()
+	runesTutorial()
 }
