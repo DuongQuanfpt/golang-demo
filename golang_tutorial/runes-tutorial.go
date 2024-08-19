@@ -29,5 +29,13 @@ func runesTutorial() {
 		strBuilder.WriteString(strSlice[i])
 	}
 	var strSlice3 = strBuilder.String()
-	fmt.Printf("\n%v", strSlice3)
+	fmt.Printf("\n%v\n", strSlice3)
+
+	var var1 complex64 = complex(3,-5)  
+	
+	fmt.Println("var1:", var1)
+	var z1 complex64 = 1 + 2i
+    var z2 complex128 = 3 + 4i
+
+    fmt.Println(z1, z2)
 }

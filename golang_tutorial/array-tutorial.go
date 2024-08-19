@@ -3,44 +3,35 @@ package main
 import "fmt"
 
 func arrayTutorial() {
-	var intArr [3]int32 = [3]int32{1, 2, 3}
-	intArr[1] = 123
-	fmt.Println(intArr[0])
-	fmt.Println(intArr[1:3])
-	fmt.Println(intArr)
+	var intArr [6]int32 = [6]int32{1, 2, 3, 4, 5, 6}
+	intSlice := intArr[1:4] //[2 3 4]
+	intSlice[0] = 10
+	fmt.Println(intArr) // [1 10 3 4 5 6]
 
-	var intSlice []int32 = []int32{4, 5, 6}
-	fmt.Println(intSlice)
-	intSlice = append(intSlice, 7)
-	fmt.Println(intSlice)
+	sliceInt := []int{10, 20, 30}
+	fmt.Println(len(sliceInt), cap(sliceInt)) //3,3
 
-	var intSlice2 []int32 = []int32{8, 9}
-	intSlice = append(intSlice, intSlice2...)
-	fmt.Println(intSlice)
+	sliceInt = append(sliceInt, 40)
+	fmt.Println(len(sliceInt), cap(sliceInt))//4,6
 
-	var intSlice3 []int32 = make([]int32, 3, 8)
-	fmt.Println(intSlice3)
+	for i,v := range sliceInt{
+		fmt.Printf("index : %v , value : %v\n" , i, v)
+	}
+	
+	b := make([]int, 0, 5) // len(b)=0, cap(b)=5
 
-	var myMap map[string]uint8 = make(map[string]uint8)
-	fmt.Println(myMap)
+	fmt.Println(b)
 
-	var myMap2 = map[string]uint8{"Adam": 23, "Sarah": 45}
-	fmt.Println(myMap2["Adam"])
-	fmt.Println(myMap2["VQ"])
-	var age, ok = myMap2["VQ"]
-	// delete(myMap2,"Adam")
-	if ok {
-		fmt.Printf("The age is :%v", age)
-	} else {
-		fmt.Printf("Notfound")
+}
+
+func Pic(dx, dy int) [][]uint8 {
+	picture := make([][]uint8,dy)
+	for i := range picture{
+		picture[i] = make([]uint8,dx)
+		for x:= range picture[i]{
+			picture[i][x] = uint8((i+x)/2)
+		}
 	}
 
-	for name := range myMap2 {
-		fmt.Printf("Name :%v,Age:%v", name, age)
-	}
-
-	for i, v := range intArr {
-		fmt.Printf("Index: %v , Value : %v \n", i, v)
-	}
-
+	return picture
 }
