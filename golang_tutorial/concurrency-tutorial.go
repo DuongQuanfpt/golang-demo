@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	// "fmt"
 	"sync"
 	
 )
@@ -40,46 +40,50 @@ func concurrencyTutorial() {
 	// value = <-result
 	// fmt.Println(value)
 
-	// ch := make(chan int, 2)
-	// ch <- 1
+	ch := make(chan int)
+	go func ()  {
+		ch <- 1
+		ch <- 2
+	}()
+	
 	// ch <- 2
 	// close(ch)
 	// for i := range ch {
 	// 	fmt.Println(i)
 	// }
-
-	c1 := make(chan int)
-	c2 := make(chan string)
-	exit := make(chan int)
 	
-	go func() {
-		intS := []int{1,2,3,4,5}
-		for i:= range intS {
-			c1 <- intS[i]
-		}
-		exit <- 1
-	}()
-	go func() {
-		stringS := []string{"one","two","three","four","five"}
-		for  i:= range stringS{
-			c2 <- stringS[i]
-		}
-		exit <- 1
-	}()
+	// c1 := make(chan int)
+	// c2 := make(chan string)
+	// exit := make(chan int)
 	
-	for {
-		select {
-		case msg1 := <-c1:
-			fmt.Println("received", msg1)
-		case msg2 := <-c2:
-			fmt.Println("received", msg2)
-		case <-exit:
-			fmt.Println("Done! exitted")
-			return
-		default:
-			fmt.Println("waiting...")
-		}
-	}
+	// go func() {
+	// 	intS := []int{1,2,3,4,5}
+	// 	for i:= range intS {
+	// 		c1 <- intS[i]
+	// 	}
+	// 	exit <- 1
+	// }()
+	// go func() {
+	// 	stringS := []string{"one","two","three","four","five"}
+	// 	for  i:= range stringS{
+	// 		c2 <- stringS[i]
+	// 	}
+	// 	exit <- 1
+	// }()
+	
+	// for {
+	// 	select {
+	// 	case msg1 := <-c1:
+	// 		fmt.Println("received", msg1)
+	// 	case msg2 := <-c2:
+	// 		fmt.Println("received", msg2)
+	// 	case <-exit:
+	// 		fmt.Println("Done! exitted")
+	// 		return
+	// 	default:
+	// 		fmt.Println("waiting...")
+	// 	}
+	// }
 	
 	// account := Acc{balance: 100}
 
