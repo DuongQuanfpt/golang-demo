@@ -1,8 +1,8 @@
-module example/hello
+module kafka-consumer
 
 go 1.22.5
 
-require rsc.io/quote v1.5.2
+require github.com/IBM/sarama v1.43.3
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
@@ -23,10 +23,4 @@ require (
 	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475 // indirect
 	golang.org/x/crypto v0.26.0 // indirect
 	golang.org/x/net v0.28.0 // indirect
-)
-
-require (
-	github.com/IBM/sarama v1.43.3
-	golang.org/x/text v0.17.0 // indirect
-	rsc.io/sampler v1.3.0 // indirect
 )

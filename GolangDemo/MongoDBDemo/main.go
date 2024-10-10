@@ -29,6 +29,7 @@ func main() {
 		Address{Building: "Abc", City: "abc",State: "abc"},
 		Address{Building: "idk", City: "idk",State: "idkv"},
 	}
+
 	_, err = coll.InsertMany(context.TODO(), docs)
 	if err != nil {
 		panic(err)
