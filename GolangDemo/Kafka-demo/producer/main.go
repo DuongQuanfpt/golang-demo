@@ -12,6 +12,11 @@ var (
 )
 
 func main() {
+	// cmd := exec.Command("C:/logstash-8.15.2/bin/logstash.bat", "-f", "C:/Users/admin/Desktop/Golang/worker-crawl-cpe/config/logstash.conf")
+	// err := cmd.Start()
+	// if err != nil {
+	// 	log.Fatalf("Failed to start Logstash: %v", err)
+	// }
 	p:= make([]byte, 10)
 	rand.Read(p)
 	pushMessagetoTopic(topic, p)

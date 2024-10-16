@@ -1,7 +1,5 @@
 package main
 
-// "golang-tutorial/hello"
-
 func main() {
 	// dataTypeTutorial()
 	// functionTutorial()
